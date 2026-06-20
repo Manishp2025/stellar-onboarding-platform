@@ -38,8 +38,9 @@ To solve the friction of Web3 developer onboarding, StellarSpark features a dual
    cd l5
    ```
 
-2. Install all dependencies (installs `@stellar/stellar-sdk` and `lucide-react` for graphics):
+2. Navigate to the `frontend` directory and install all dependencies:
    ```bash
+   cd frontend
    npm install
    ```
 
@@ -58,18 +59,19 @@ To solve the friction of Web3 developer onboarding, StellarSpark features a dual
 
 ## 📁 Technical Architecture & Project Structure
 
-StellarSpark is designed around clean Separation of Concerns (SoC) for absolute robustness:
+StellarSpark follows a standard Stellar developer challenge monorepo layout, separating smart contracts and the frontend:
 
-- [architecture.md](file:///c:/Users/manis/.gemini/antigravity/scratch/l5/architecture.md): A comprehensive architecture document mapping API routes, trustline mechanics, and network workflows.
-- `src/services/stellar.js`: Horizon endpoint broker executing Keypair creations, account refreshes, payments operations, trustline shifts, and history checks.
-- `src/context/WalletContext.jsx`: Orchestrates balances, connect toggles, Freighter extension simulators, and transaction toast alert queues.
-- `src/components/`:
-  - `Navbar.jsx`: Branding header and active Horizon ping meters.
-  - `Dashboard.jsx`: Portfolio stats, secret seed reveals, Friendbot refuel triggers, and custom token tallies.
-  - `CampaignCard.jsx`: Campaign overview cards showing progress levels and reward codes.
-  - `CampaignDetailsModal.jsx`: Support tiers, customized backing inputs, and on-chain explorer links.
-  - `CreateCampaign.jsx`: Campaign wizard generating on-chain credentials.
-- `src/index.css`: Styling sheets establishing dark-nebula grids, glass panels, glowing borders, custom scrollbars, and keyframe animations.
+- **Root Files**:
+  - `Cargo.toml`: Standard Cargo workspace configuration declaring the Rust contracts.
+  - [architecture.md](file:///c:/Users/manis/.gemini/antigravity/scratch/l5/architecture.md): A comprehensive architecture document mapping API routes, trustline mechanics, and network workflows.
+  - [feedback_responses.csv](file:///c:/Users/manis/.gemini/antigravity/scratch/l5/feedback_responses.csv): User feedback onboarding database.
+- **`/contracts`**: Folder containing the Soroban smart contracts.
+  - `placeholder/`: A baseline, warning-free placeholder Soroban contract ensuring full workspace build compliance.
+- **`/frontend`**: Folder containing the React/Vite onboarding DApp.
+  - `src/services/stellar.js`: Horizon endpoint broker executing Keypair creations, account refreshes, payments operations, trustline shifts, and history checks.
+  - `src/context/WalletContext.jsx`: Orchestrates balances, connect toggles, Freighter extension simulators, and transaction toast alert queues.
+  - `src/components/`: UI components including `Navbar`, `Dashboard`, `CampaignCard`, `CampaignDetailsModal`, and `CreateCampaign`.
+  - `src/index.css`: Styling sheets establishing dark-nebula grids, glass panels, glowing borders, custom scrollbars, and keyframe animations.
 
 ---
 

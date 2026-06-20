@@ -58,14 +58,14 @@ Unlike other blockchains where issuing a custom token requires writing, auditing
 
 ## Folder Structure & Module Responsibilities
 
-The codebase follows a modular architecture built for quick performance and code maintenance:
+The codebase follows a standard Stellar developer challenge monorepo layout, separating smart contracts and the frontend:
 
-- **`src/services/stellar.js`**: Core Horizon API service layer. Conducts keypair generations, account details fetches, payment operation builds, trustline submissions, and payments history parsing.
-- **`src/context/WalletContext.jsx`**: Global React Context managing cryptographic keys, balance tracking state, Freighter/embedded wallet bridging, and real-time transaction toast notifications.
-- **`src/components/`**:
+- **`frontend/src/services/stellar.js`**: Core Horizon API service layer. Conducts keypair generations, account details fetches, payment operation builds, trustline submissions, and payments history parsing.
+- **`frontend/src/context/WalletContext.jsx`**: Global React Context managing cryptographic keys, balance tracking state, Freighter/embedded wallet bridging, and real-time transaction toast notifications.
+- **`frontend/src/components/`**:
   - `Navbar.jsx`: Brand aesthetics and real-time Stellar Network Horizon status monitors.
   - `Dashboard.jsx`: Portfolio stats, balance displays, Friendbot refill triggers, and custom token holdings.
   - `CampaignCard.jsx`: Reusable cards rendering progress percentage bars and custom badges.
   - `CampaignDetailsModal.jsx`: Tiers selector, interactive payment processors, and Horizon Explorer verification links.
-  - `CreateCampaign.jsx`: Campaign registrations and native asset specifications.
-- **`src/index.css`**: Design foundation utilizing custom HSL properties, high-blur glassmorphism panels, glowing indicator animations, and responsive flex/grid layouts.
+  - `CreateCampaign.jsx`: Campaign wizard generating on-chain credentials.
+- **`frontend/src/index.css`**: Design foundation utilizing custom HSL properties, high-blur glassmorphism panels, glowing indicator animations, and responsive flex/grid layouts.
