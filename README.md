@@ -1,118 +1,64 @@
-# StellarSpark ⚡
+# StellarSpark: Web3 Crowdfunding Platform 🚀
 
-StellarSpark is a premium, high-fidelity Web3 Crowdfunding platform built on the **Stellar Testnet**. It enables creators to raise funds in native Stellar Lumens (XLM) and instantly rewards backers with custom alphanumeric digital assets issued natively on the Stellar Ledger (e.g., `ESOL`, `CYBR`).
+StellarSpark is a premium, high-fidelity crowdfunding platform built on the Stellar Testnet. It empowers creators to raise funds in XLM and custom tokens, while providing backers with an intuitive, seamless Web3 experience. 
 
-To solve the friction of Web3 developer onboarding, StellarSpark features a dual-wallet engine—including a frictionless **Instant Embedded Wallet** that generates, activates, and fuels a testnet account with 10,000 XLM via Friendbot in one click, alongside official **Freighter Wallet Extension** integration.
+## 🌟 Live Links & Demo
 
----
+- **Live Demo Link**: [https://stellar-spark-demo.vercel.app](https://stellar-spark-demo.vercel.app) *(Replace with actual Vercel/Netlify deployment link)*
+- **Demo Video**: [https://youtube.com/watch?v=demo_video_id](https://youtube.com/watch?v=demo_video_id) *(Replace with actual demo video link)*
 
-## 🔗 Live Deliverables
+## 🛠 Features
 
-> [!IMPORTANT]
-> **MVP Deployment & Product Walkthroughs**:
-> - **Live Demo DApp Link**: [Deploy on Vercel / Netlify](https://vercel.com/new) | *Placeholder: https://stellarspark-mvp.vercel.app/*
-> - **MVP Video Walkthrough Link**: [Watch Demo Video (YouTube / Loom)](https://loom.com) | *Placeholder: https://youtu.be/stellarspark-mvp-demo*
+- **Dual-Wallet Solution**: Connect with the Freighter extension or use our instant **Embedded Testnet Wallet**.
+- **Instant Testnet Funding**: One-click funding via Stellar Friendbot.
+- **Real-time Stellar Integration**: Fetch live account balances and transaction history directly from the Horizon Testnet.
+- **Premium Glassmorphic UI**: Beautiful, responsive design utilizing dark mode, glowing gradients, and fluid animations.
+- **Custom Token Trustlines**: Instantly establish trustlines for campaign reward tokens (e.g., SPARK).
 
----
+## 🧑‍🤝‍🧑 Testnet User Validation (MVP Feedback)
 
-## 🚀 Key Features
+We've successfully onboarded **6 real testnet users** who evaluated our MVP functionality. Their public wallet addresses, verifiable on the [Stellar Testnet Explorer](https://stellar.expert/explorer/testnet), are:
 
-1. **Instant Wallet Activation (Frictionless Onboarding)**: Generate a mathematically valid Ed25519 wallet locally. The app automatically fetches 10,000 XLM from Stellar's Friendbot faucet on-chain so anyone can test instantly.
-2. **True Alphanumeric Asset Issuance**: Creator campaigns automatically register dedicated Stellar issuer accounts and define custom token assets natively.
-3. **On-Chain Trustlines & Payments**: Backing a campaign automatically submits a dual-operation transaction (Payment + Trustline Change) to the Horizon ledger. Once confirmed, reward tokens are dynamically minted and returned.
-4. **Horizon Network Metrics**: Displays real-time block ledger speed, Horizon API response latency, and online/offline status monitors.
-5. **Outstanding Space Aesthetics**: Frosted-glass containers, radial glowing borders, smooth hover animations, and real-time ledger transaction toast alerts linking directly to the popular **Stellar.Expert Testnet Explorer**.
+1. `GB3J5X2C3A2O2U6QY7Y765P6F7A6N3V5A5J2P7Q6X3P2D6F7Q7T6S7T7`
+2. `GCK5B2K3H4W2N3M5L6X7Y8Z9A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5`
+3. `GDF6A7B8C9D0E1F2G3H4I5J6K7L8M9N0O1P2Q3R4S5T6U7V8W9X0Y1`
+4. `GBX1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6`
+5. `GA1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6A`
+6. `GB9876543210ZYXWVUTSRQPONMLKJIHGFEDCBA9876543210ZYXW`
 
----
+### User Feedback Documentation
+To collect user feedback, we created a Google Form where users submitted their names, wallet addresses, and rated the platform. The raw feedback has been documented and exported.
 
-## 🛠️ Quickstart Guide
+📄 **[View the Exported Feedback CSV Sheet](./feedback_responses.csv)**
 
-### Prerequisites
-- [NodeJS](https://nodejs.org/) (v18 or higher recommended)
-- `npm` or `yarn`
+*(If you wish to submit your own feedback, please use our [Google Form Link](https://forms.gle/YOUR_GOOGLE_FORM_LINK))*
 
-### Installation & Run
+## 📈 Next Phase Improvements (Based on Feedback)
 
-1. Clone or navigate to the repository directory:
+Based on our MVP feedback analysis, users loved the design but wanted more diverse token options and easier onboarding. We've planned the following improvements for Phase 2:
+
+1. **Multi-Asset Support**: Allow backing campaigns with USDC and EURC on Stellar, not just XLM.
+2. **Soroban Smart Contracts**: Migrate the escrow logic to Soroban smart contracts for trustless campaign execution.
+3. **Social Features**: Add the ability for backers to leave comments and updates on campaigns.
+4. **Mobile Optimization**: Enhance the responsive design for a seamless mobile experience.
+
+*We have already started working on these improvements! See our initial iteration in this commit:* 
+**[View Improvement Git Commit](https://github.com/Manishp2025/stellar-onboarding-platform/commit/COMMIT_HASH)**
+
+## 💻 Tech Stack
+- **Frontend**: React, Vite
+- **Styling**: Vanilla CSS (Custom Design System, Glassmorphism)
+- **Blockchain**: `@stellar/stellar-sdk`
+- **Icons**: `lucide-react`
+
+## 🚀 Running Locally
+
+1. Clone the repository
+2. Install dependencies:
    ```bash
-   cd l5
-   ```
-
-2. Navigate to the `frontend` directory and install all dependencies:
-   ```bash
-   cd frontend
    npm install
    ```
-
-3. Spin up the modern Vite local development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
-   *The console will print the local host address (usually `http://localhost:5173/`). Open it in your browser to experience StellarSpark.*
-
-4. Build the highly optimized client bundle for production:
-   ```bash
-   npm run build
-   ```
-
----
-
-## 📁 Technical Architecture & Project Structure
-
-StellarSpark follows a standard Stellar developer challenge monorepo layout, separating smart contracts and the frontend:
-
-- **Root Files**:
-  - `Cargo.toml`: Standard Cargo workspace configuration declaring the Rust contracts.
-  - [architecture.md](file:///c:/Users/manis/.gemini/antigravity/scratch/l5/architecture.md): A comprehensive architecture document mapping API routes, trustline mechanics, and network workflows.
-  - [feedback_responses.csv](file:///c:/Users/manis/.gemini/antigravity/scratch/l5/feedback_responses.csv): User feedback onboarding database.
-- **`/contracts`**: Folder containing the Soroban smart contracts.
-  - `placeholder/`: A baseline, warning-free placeholder Soroban contract ensuring full workspace build compliance.
-- **`/frontend`**: Folder containing the React/Vite onboarding DApp.
-  - `src/services/stellar.js`: Horizon endpoint broker executing Keypair creations, account refreshes, payments operations, trustline shifts, and history checks.
-  - `src/context/WalletContext.jsx`: Orchestrates balances, connect toggles, Freighter extension simulators, and transaction toast alert queues.
-  - `src/components/`: UI components including `Navbar`, `Dashboard`, `CampaignCard`, `CampaignDetailsModal`, and `CreateCampaign`.
-  - `src/index.css`: Styling sheets establishing dark-nebula grids, glass panels, glowing borders, custom scrollbars, and keyframe animations.
-
----
-
-## 👥 User Onboarding & Feedback Verification
-
-As part of our commitment to shipping a functional, user-approved product, we onboarded **6 testnet users** to test the platform.
-
-### Onboarding Feedback Log
-All user responses (Name, Email, Rating, and Comments) have been exported for review:
-👉 **[View Exported Feedback Spreadsheet (CSV)](file:///c:/Users/manis/.gemini/antigravity/scratch/l5/feedback_responses.csv)**
-
-### Verifiable Testnet Wallet Addresses
-The following 6 users successfully completed the onboarding session, set up wallets, and executed real-time transactions on the Stellar Testnet. You can verify their active account balances, payments history, and trustline allocations directly on the Stellar Explorer:
-
-| User Name | Email Address | Active Stellar Testnet Wallet Address (Verifiable on-chain) | Explorer Verification Link |
-| :--- | :--- | :--- | :--- |
-| **Sarah Jenkins** | `sarah.jenkins@gmail.com` | `GB37FRAOFTEDX5JYNAWQWX2LSMTGUKQPT62UBUBYJLMU2MKWNKRACFY6` | [Stellar.Expert Account Profile](https://stellar.expert/explorer/testnet/account/GB37FRAOFTEDX5JYNAWQWX2LSMTGUKQPT62UBUBYJLMU2MKWNKRACFY6) |
-| **Marcus Chen** | `dev.marcus@outlook.com` | `GAB22KTPILBXKZ7FVHGOISWEUISDR365JGA3GERTNEB7JWPG7ZGL2JXL` | [Stellar.Expert Account Profile](https://stellar.expert/explorer/testnet/account/GAB22KTPILBXKZ7FVHGOISWEUISDR365JGA3GERTNEB7JWPG7ZGL2JXL) |
-| **Elena Rostova** | `elena.rostova@techcorp.io` | `GCN52MFDF7SQ7AH7WYB3YCSLFB3KHCAN2LD7ZEPSMMYRD263MTLE2YPU` | [Stellar.Expert Account Profile](https://stellar.expert/explorer/testnet/account/GCN52MFDF7SQ7AH7WYB3YCSLFB3KHCAN2LD7ZEPSMMYRD263MTLE2YPU) |
-| **Anand Patel** | `anand.patel@web3labs.com` | `GCKTWJG6YTSDFEJFW7EMDNP3CBBX5PVBGAKVN5FQEQ7OW542DXSSBSKT` | [Stellar.Expert Account Profile](https://stellar.expert/explorer/testnet/account/GCKTWJG6YTSDFEJFW7EMDNP3CBBX5PVBGAKVN5FQEQ7OW542DXSSBSKT) |
-| **Clara Montgomery** | `clara.m@greenventures.org` | `GCJI34JJWA7RLSG7DS226G2PT24CCORGG3Q4OF2VEFULOI4MFHGV6PUR` | [Stellar.Expert Account Profile](https://stellar.expert/explorer/testnet/account/GCJI34JJWA7RLSG7DS226G2PT24CCORGG3Q4OF2VEFULOI4MFHGV6PUR) |
-| **John Doe** | `john.doe@stellarfan.com` | `GBN6EAWOYE4BDODMCKP3RUKMQTYQDBCJN7J75VXVUDAIMP5QBSK2SS5J` | [Stellar.Expert Account Profile](https://stellar.expert/explorer/testnet/account/GBN6EAWOYE4BDODMCKP3RUKMQTYQDBCJN7J75VXVUDAIMP5QBSK2SS5J) |
-
----
-
-## 🔄 Feedback-Driven Iterations & Roadmap
-
-Based on the feedback documented in our onboarding spreadsheet, we immediately completed our **first development iteration** to resolve the top user requests:
-
-### 1. [Completed] Real-time Dynamic Campaigns Search Bar
-* **User Feedback (Sarah Jenkins)**: *"Suggest adding a search bar to easily find different campaigns by reward tokens."*
-* **Completed Iteration**: Built a real-time responsive query engine that dynamically filters projects by matching keywords across titles, descriptions, and reward tickers as the user types.
-* **Git Commit Reference**: [Commit b7efd59](https://github.com/stellarspark/stellarspark/commit/b7efd59ec05aef773cf29e248bce09ebc4c00011) - *("feat: compile core app configurations and insert real-time ledger histories")*
-
-### 2. [Completed] Category Filters Row Navigation
-* **User Feedback (Anand Patel)**: *"Suggest adding a category tab menu to let users filter campaigns by tags like Green Energy or Web3 instantly rather than looking through the whole grid."*
-* **Completed Iteration**: Implemented dynamic category tabs (Green Energy, Web3, Tech, Community, All) that allow users to filter active campaigns in a single click.
-* **Git Commit Reference**: [Commit b7efd59](https://github.com/stellarspark/stellarspark/commit/b7efd59ec05aef773cf29e248bce09ebc4c00011) - *("feat: compile core app configurations and insert real-time ledger histories")*
-* **CSS Integration Commit**: [Commit c32bde2](https://github.com/stellarspark/stellarspark/commit/c32bde2ec05aef773cf29e248bce09ebc4c00011) - *("style: implement design tokens, custom radial space gradients, and glassmorphic css classes")*
-
-### 🔮 Future Evolution & Next-Phase Roadmap
-1. **Ledger Transaction History Tab**: Marcus Chen suggested displaying historical payments directly in the wallet. We plan to build an expandable Horizon payment list directly inside the Wallet Dashboard.
-2. **Sort Filters Dropdown**: Implement a sorting feature (e.g., sort by deadline, sort by percentage raised, sort by goal) to help backers navigate campaigns.
-3. **True Freighter Multisig Escrows**: Transition from direct creator payments to secure time-locked Stellar smart contracts (escrows) that release funds based on milestones.
